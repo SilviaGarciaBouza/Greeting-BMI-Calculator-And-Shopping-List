@@ -19,6 +19,9 @@
     <string name="recalcular">Recalcular</string>
     <string name="Normal">Normal</string>
 
+    <string name="imc_peso_inferior">Poco peso</string>
+    <string name="imc_peso_inferior_description">El peso está por debajo de los valores óptimos.</string>
+
     <string name="imc_normal">Normal</string>
     <string name="imc_normal_description">El peso está dentro de los valores óptimos.</string>
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.example.nameapplication.R
 
 class ResultIMCCalculatorActivity : AppCompatActivity() {
@@ -26,24 +27,38 @@ class ResultIMCCalculatorActivity : AppCompatActivity() {
 
     private fun setValues(result: Double) {
         when(result) {
-            in 0.00..16.00 -> {
-                resultIMC.text = result.toString()
-                quantityIMC.text = getString(R.string.imc_normal)
+            in 0.00..18.50 -> {
+               quantityIMC.text= result.toString()
+                quantityIMC.setTextColor(ContextCompat.getColor(this,R.color.sobrepesoOpesoInferior))
+
+                //quantityIMC.setTextColor(ContextCompat.getColor(this,R.color.tv_normal))
+                resultIMC.text  = getString(R.string.imc_peso_inferior)
+                descriptionIMC.text= getString(R.string.imc_peso_inferior_description)
+            }
+            in 18.51..24.99 -> {
+                quantityIMC.text= result.toString()
+                quantityIMC.setTextColor(ContextCompat.getColor(this,R.color.tv_normal))
+
+                resultIMC.text  = getString(R.string.imc_normal)
                 descriptionIMC.text= getString(R.string.imc_normal_description)
             }
-            in 16.01..16.02 -> {
-                resultIMC.text = result.toString()
-                quantityIMC.text = getString(R.string.imc_sobrepeso)
+            in 25.00..29.99-> {
+                quantityIMC.text = result.toString()
+                quantityIMC.setTextColor(ContextCompat.getColor(this,R.color.sobrepesoOpesoInferior))
+
+                resultIMC.text= getString(R.string.imc_sobrepeso)
                 descriptionIMC.text= getString(R.string.imc_sobrepeso_description)
             }
-            in 16.01..16.02 -> {
-                resultIMC.text = result.toString()
-                quantityIMC.text = getString(R.string.imc_obesidad)
+            in 30.00..99.99-> {
+                quantityIMC.text = result.toString()
+                quantityIMC.setTextColor(ContextCompat.getColor(this,R.color.obesidad))
+
+                resultIMC.text = getString(R.string.imc_obesidad)
                 descriptionIMC.text= getString(R.string.imc_obesidad_description)
             }
             else -> {
-                resultIMC.text = getString(R.string.error)
                 quantityIMC.text = getString(R.string.error)
+                resultIMC.text= getString(R.string.error)
                 descriptionIMC.text= getString(R.string.error)
             }
         }

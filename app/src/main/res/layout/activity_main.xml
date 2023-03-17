@@ -9,24 +9,37 @@
     tools:context=".MainActivity"
   android:paddingTop="12dp"
     android:paddingEnd="12dp"
-    android:paddingStart="12dp">
+    android:paddingStart="12dp"
+    android:background="@color/backgroundApp"
+    android:layout_gravity="center_horizontal">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_greet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/saludo"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/buttonCalculate" />
+        <Button
+            android:id="@+id/btn_imc_calculator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calculadora_de_imc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_greet"
+            android:backgroundTint="@color/buttonCalculate"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-    <Button
-        android:id="@+id/btn_greet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/saludo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-    <Button
-        android:id="@+id/btn_imc_calculator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/calculadora_de_imc"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_greet"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

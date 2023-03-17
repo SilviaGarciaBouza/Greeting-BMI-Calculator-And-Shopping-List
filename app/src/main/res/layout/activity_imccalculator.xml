@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".IMCCalculate.IMCCalculatorActivity"
     android:paddingHorizontal="32dp"
-    android:paddingVertical="20dp">
+    android:paddingVertical="20dp"
+    android:background="@color/backgroundApp">
     <androidx.cardview.widget.CardView
         android:id="@+id/male"
         android:layout_width="0dp"
@@ -101,7 +102,7 @@
         android:layout_height="150dp"
         app:cardCornerRadius="16dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="@color/backgroundCardNotSelected"
+        app:cardBackgroundColor="@color/backgroundCardSelected"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_height"
         app:layout_constraintEnd_toStartOf="@+id/age"
@@ -135,13 +136,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_substract"
-                   android:backgroundTint="@color/backgroundCardSelected"/>
+                   android:backgroundTint="@color/backgroundCardNotSelected"/>
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/plus_weigh"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_plus"
-                    android:backgroundTint="@color/backgroundCardSelected"/>
+                    android:backgroundTint="@color/backgroundCardNotSelected"/>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
@@ -152,7 +153,7 @@
         android:layout_height="150dp"
         app:cardCornerRadius="16dp"
         android:layout_marginTop="5dp"
-        app:cardBackgroundColor="@color/backgroundCardNotSelected"
+        app:cardBackgroundColor="@color/backgroundCardSelected"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_height"
         app:layout_constraintStart_toEndOf="@+id/weigh"

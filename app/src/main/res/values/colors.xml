@@ -10,7 +10,17 @@
 
 
 
-    <color name="backgroundCardSelected">#9C27B0</color>
-    <color name="backgroundCardNotSelected">#EFBAF8</color>
-    <color name="buttonCalculate">#00BCD4</color>
+    <color name="backgroundCardSelected">#09B9CA</color>
+    <color name="backgroundCardNotSelected">#5CE7F4</color>
+    <color name="buttonCalculate">#CC8EF8</color>
+    <color name="backgroundApp">#B3F2FB</color>
+
+    <color name="tv_normal">#4CAF50</color>
+    <color name="sobrepesoOpesoInferior">#FFC107</color>
+    <color name="obesidad">#FF5722</color>
+
+
+
+
+
 </resources>

@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".greet.NameActivity">
+    tools:context=".greet.NameActivity"
+    android:background="@color/backgroundApp">
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_click"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/buttonCalculate"/>
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/ed_click"
             app:layout_constraintBottom_toTopOf="@+id/btn_click"
