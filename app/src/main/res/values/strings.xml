@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">MainApplication</string>
+    <string name="button">Button</string>
+    <string name="escribe_tu_nombre">Escribe tu nombre</string>
+    <string name="hola">¡Hola!</string>
+    <string name="saludo">Saludo</string>
+    <string name="calculadora_de_imc">Calculadora de IMC</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="altura">Altura</string>
+    <string name="peso">Peso</string>
+    <string name="edad">Edad</string>
+    <string name="calcular_imc">Calcular IMC</string>
+    <string name="volver_a_calcular">Volver a calcular</string>
+    <string name="tu_imc">Tu IMC:</string>
+    <string name="tu_peso_es">tu peso es...</string>
+    <string name="_21">21</string>
+    <string name="tu_resultado">Tu resultado:</string>
+    <string name="recalcular">Recalcular</string>
+    <string name="Normal">Normal</string>
+
+    <string name="imc_normal">Normal</string>
+    <string name="imc_normal_description">El peso está dentro de los valores óptimos.</string>
+
+    <string name="imc_sobrepeso">Sobrepeso</string>
+    <string name="imc_sobrepeso_description">El peso está por encima de los valores óptimos.</string>
+
+    <string name="imc_obesidad">Obesidad</string>
+    <string name="imc_obesidad_description">El peso está muy por encima de los valores óptimos.</string>
+
+    <string name="error">Error</string>
+
+
+
+
+
+
+</resources>
