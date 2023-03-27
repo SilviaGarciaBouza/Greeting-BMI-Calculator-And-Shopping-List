@@ -13,6 +13,9 @@
         android:theme="@style/Theme.NameApplication"
         tools:targetApi="31">
         <activity
+            android:name=".shoppingList.ShoppingActivity"
+            android:exported="false" />
+        <activity
             android:name=".IMCCalculate.ResultIMCCalculatorActivity"
             android:exported="false">
             <meta-data

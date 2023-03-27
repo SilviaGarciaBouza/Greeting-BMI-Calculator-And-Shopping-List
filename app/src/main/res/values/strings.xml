@@ -32,10 +32,12 @@
     <string name="imc_obesidad_description">El peso está muy por encima de los valores óptimos.</string>
 
     <string name="error">Error</string>
-
-
-
-
+    <string name="market_list">Lista de la compra</string>
+    <string name="shopping_list">Lista de la compra</string>
+    <string name="category">Categoría</string>
+    <string name="product">Productos</string>
+    <string name="pantry">Despensa</string>
+    <string name="peppers">Pimientos</string>
 
 
 </resources>

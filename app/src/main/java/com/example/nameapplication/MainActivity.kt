@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatEditText
 import com.example.nameapplication.IMCCalculate.IMCCalculatorActivity
 import com.example.nameapplication.greet.NameActivity
 import com.example.nameapplication.greet.ResultActivity
+import com.example.nameapplication.shoppingList.ShoppingActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,10 @@ class MainActivity : AppCompatActivity() {
         buttonIMC.setOnClickListener{
             navigateToIMCCalculator()
         }
+        val buttonShopping = findViewById<Button>(R.id.btn_shopping)
+        buttonShopping.setOnClickListener{
+            navigateToShoppingList()
+        }
     }
 
 
@@ -36,6 +41,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToIMCCalculator() {
         val intent = Intent(this, IMCCalculatorActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToShoppingList() {
+        val intent = Intent(this, ShoppingActivity::class.java)
         startActivity(intent)
     }
 }
