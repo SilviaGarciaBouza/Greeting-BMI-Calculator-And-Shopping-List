@@ -1,16 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="300dp"
-    android:layout_height="300dp"
+    android:layout_height="400dp"
     android:padding="16dp"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@color/backgroundCardSelected">
+
     <EditText
         android:id="@+id/et_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="hlmvokmo"/>
-    <Button
+        android:hint="@string/new_product"
+        android:minHeight="48dp" />
+    <RadioGroup
+        android:id="@+id/rg_dialog"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_dialog_carniceria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/carniceria"
+            android:textColor="@color/white"/>
+        <RadioButton
+            android:id="@+id/rb_dialog_pescaderia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/pescaderia"/>
+        <RadioButton
+            android:id="@+id/rb_dialog_fruteria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/fruteria"/>
+        <RadioButton
+            android:id="@+id/rb_dialog_despensa"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:text="@string/despensa"/>
+        <RadioButton
+            android:id="@+id/rb_dialog_congelados"
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:text="@string/frozen"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/a_adir_producto"
+        android:backgroundTint="@color/buttonCalculate"/>
 </LinearLayout>

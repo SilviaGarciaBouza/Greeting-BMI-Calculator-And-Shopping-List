@@ -38,6 +38,13 @@
     <string name="product">Productos</string>
     <string name="pantry">Despensa</string>
     <string name="peppers">Pimientos</string>
+    <string name="frozen">Congelados</string>
+    <string name="despensa">Despensa</string>
+    <string name="fruteria">Fruteria</string>
+    <string name="pescaderia">Pescaderia</string>
+    <string name="carniceria">Carniceria</string>
+    <string name="new_product">Nuevo producto</string>
+    <string name="a_adir_producto">Añadir producto</string>
 
 
 </resources>
