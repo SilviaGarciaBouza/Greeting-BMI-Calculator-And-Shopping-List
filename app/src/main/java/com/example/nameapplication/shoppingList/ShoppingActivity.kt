@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nameapplication.R
 import com.example.nameapplication.R.id.et_dialog
+import com.example.nameapplication.databinding.ActivityShoppingBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.util.Collections.list
 
 
 class ShoppingActivity : AppCompatActivity() {
@@ -34,21 +36,46 @@ class ShoppingActivity : AppCompatActivity() {
         Product("Chorizos", Category.Carniceria),
         Product("Helado", Category.Congelados),
         Product("Calamares", Category.Pescaderia)
+
     )
 
-    private lateinit var rvCategory: RecyclerView
+
     private lateinit var shoppingAdapter: ShoppingAdapter
-    private lateinit var rvProduct: RecyclerView
     private lateinit var productAdapter: ProductAdapter
-    private lateinit var fabAddProduct: FloatingActionButton
+
+    private lateinit var binding: ActivityShoppingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_shopping)
-        initComponents()
+        binding= ActivityShoppingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initUI()
 
     }
+
+
+
+
+    private fun initUI() {
+        //filtrar products por categorías:5updateCategory
+
+        val categoryListFilter = categoriesList.filter{it.isSelected}
+
+        shoppingAdapter = ShoppingAdapter(categoryListFilter){position -> updateCategories(position)}
+        binding.rvShoppingCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvShoppingCategory.adapter = shoppingAdapter
+
+
+        productAdapter = ProductAdapter(productList)
+        binding.rvShoppingProduct.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        binding.rvShoppingProduct.adapter = productAdapter
+
+        binding.fabShoppingAddProduct.setOnClickListener{
+            addProduct()
+        }
+
+    }
+
     private fun addProduct() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_layout)
@@ -75,46 +102,42 @@ class ShoppingActivity : AppCompatActivity() {
         }
     }
 
+
+
+    //Deseleccionar categoría:7- selecciona solo los q son de esa categoría
     @SuppressLint("NotifyDataSetChanged")
-    fun updateTasks(){
+    private fun updateTasks(){
+        val selectCategory: List<Category> = categoriesList.filter { it.isSelected }
+        val newProduct = productList.filter { selectCategory.contains(it.category) }
+        productAdapter.productList = newProduct
+
         productAdapter.notifyDataSetChanged()
     }
 
-    private fun initComponents() {
-        rvCategory = findViewById(R.id.rv_shopping_category)
-        rvProduct = findViewById(R.id.rv_shopping_product)
-        fabAddProduct = findViewById(R.id.fab_shopping_add_product)
+
+
+    //Deseleccionar categoría:6- actualizas category
+    private fun updateCategories(position: Int) {
+        categoriesList[position].isSelected = !categoriesList[position].isSelected
+        shoppingAdapter.notifyItemChanged(position)
+        updateTasks()
+    }
+    /*
+    fun filterProducts(mutableList: MutableList<Product>): MutableList<Product> {
+            val newListProduct = mutableListOf<Product>()
+          val categoryListFilter = categoriesList.filter{it.isSelected}
+
+            categoryListFilter.forEach { item ->
+                val productListFilter = mutableList.filter {
+                    it.category ==  item
+                }
+                newListProduct.addAll(productListFilter)
+            }
+
+            productList = newListProduct
+        return productList
+            //updateTasks()
     }
 
-    private fun initUI() {
-        shoppingAdapter = ShoppingAdapter(categoriesList)
-        rvCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        rvCategory.adapter = shoppingAdapter
-
-        productAdapter = ProductAdapter(productList)
-        rvProduct.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-        rvProduct.adapter = productAdapter
-
-       fabAddProduct.setOnClickListener{
-            addProduct()
-        }
-        filterProducts(productList)
-
-    }
-
-    private fun filterProducts(mutableList: MutableList<Product>) {
-        //TODO filtrar productos por categorias
-       // var filterList: MutableList<Product> = mutableListOf<Product>()
-       // mutableList.forEach () {
-
-
-
-       // while (product.isSelected= true){ filterList.add(product)}
-
-
-
-      //  productList = filterList
-        //productos con las categorías selected
-        //mostrar solo la lista con esos productos
-    }
+*/
 }

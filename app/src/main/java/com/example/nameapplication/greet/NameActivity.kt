@@ -6,16 +6,18 @@ import android.os.Bundle
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import com.example.nameapplication.R
+import com.example.nameapplication.databinding.ActivityNameBinding
 
 class NameActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityNameBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_name)
+        binding = ActivityNameBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val butonClick = findViewById<AppCompatButton>(R.id.btn_click)
-        val editTextClick = findViewById<AppCompatEditText>(R.id.ed_click)
-        butonClick.setOnClickListener {
-            val name = editTextClick.text.toString()
+        binding.btnClick.setOnClickListener {
+            val name = binding.edClick.text.toString()
             if (name.isNotEmpty()) {
                 //crea el intent. Lepasas el context(this) y la activity a la q vas(ResultActivity::class.java)
                 val intent = Intent(this, ResultActivity::class.java)

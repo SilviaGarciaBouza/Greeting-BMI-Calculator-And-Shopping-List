@@ -3,35 +3,40 @@ package com.example.nameapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatEditText
 import com.example.nameapplication.IMCCalculate.IMCCalculatorActivity
+import com.example.nameapplication.databinding.ActivityMainBinding
 import com.example.nameapplication.greet.NameActivity
-import com.example.nameapplication.greet.ResultActivity
+import com.example.nameapplication.sentences.view.SentencesActivity
 import com.example.nameapplication.shoppingList.ShoppingActivity
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val buttonGreet = findViewById<Button>(R.id.btn_greet)
-        buttonGreet.setOnClickListener {
+        binding.btnGreet.setOnClickListener {
             navigateToGreetApp()
         }
 
-        val buttonIMC = findViewById<Button>(R.id.btn_imc_calculator)
-        buttonIMC.setOnClickListener{
+        binding.btnImcCalculator.setOnClickListener{
             navigateToIMCCalculator()
         }
-        val buttonShopping = findViewById<Button>(R.id.btn_shopping)
-        buttonShopping.setOnClickListener{
+        binding.btnShopping.setOnClickListener{
             navigateToShoppingList()
+        }
+        binding.btnSentences.setOnClickListener{
+            navigateToSentences()
         }
     }
 
+    private fun navigateToSentences() {
+        val intent = Intent(this, SentencesActivity::class.java)
+        startActivity(intent)
+    }
 
 
     private fun navigateToGreetApp() {
@@ -48,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, ShoppingActivity::class.java)
         startActivity(intent)
     }
+
 }
 
 

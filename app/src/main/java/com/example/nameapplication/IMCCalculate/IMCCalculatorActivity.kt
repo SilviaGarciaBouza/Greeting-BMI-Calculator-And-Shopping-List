@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.example.nameapplication.R
+import com.example.nameapplication.databinding.ActivityImccalculatorBinding
 import com.example.nameapplication.greet.ResultActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
@@ -16,18 +17,9 @@ import java.security.KeyStore.TrustedCertificateEntry
 import java.text.DecimalFormat
 
 class IMCCalculatorActivity : AppCompatActivity() {
-    lateinit var male: CardView
-    lateinit var female: CardView
-    lateinit var heightQuantity: TextView
-    lateinit var rangeHeight: RangeSlider
-    lateinit var weigh: TextView
-    lateinit var weighSubstract: FloatingActionButton
-    lateinit var weighPlus: FloatingActionButton
-    lateinit var age: TextView
-    lateinit var ageSubstract: FloatingActionButton
-    lateinit var agePlus: FloatingActionButton
-    lateinit var calculate: Button
 
+
+    private lateinit var binding:ActivityImccalculatorBinding
 
     private var isMaleSelected: Boolean = true
     private var isFemaleSelected: Boolean = false
@@ -37,8 +29,8 @@ class IMCCalculatorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_imccalculator)
-        initMaleFemale()
+        binding = ActivityImccalculatorBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         clic()
         colorToClick()
         setWeight()
@@ -47,54 +39,40 @@ class IMCCalculatorActivity : AppCompatActivity() {
 
 
 
-    private fun initMaleFemale() {
-        male = findViewById(R.id.male)
-        female = findViewById(R.id.female)
-        heightQuantity = findViewById(R.id.tv_height_quantity)
-        rangeHeight = findViewById(R.id.rs_height)
-        weigh = findViewById(R.id.tv_weigh_quantity)
-        weighSubstract = findViewById(R.id.substract_weigh)
-        weighPlus = findViewById(R.id.plus_weigh)
-        age = findViewById(R.id.tv_age_quantity)
-        ageSubstract = findViewById(R.id.substract_age)
-        agePlus = findViewById(R.id.plus_age)
-        calculate = findViewById(R.id.bt_calcutate_imc)
 
-
-    }
     private fun clic() {
-        male.setOnClickListener {
+        binding.male.setOnClickListener {
             changeSelect()
             colorToClick()
         }
-        female.setOnClickListener {
+        binding.female.setOnClickListener {
             changeSelect()
             colorToClick()
         }
-        rangeHeight.addOnChangeListener{ _,value,_ ->
+        binding.rsHeight.addOnChangeListener{ _,value,_ ->
             val df = DecimalFormat()
             val result = df.format(value)
-            heightQuantity.text = "$result cm"
+            binding.tvHeightQuantity.text = "$result cm"
             heightNumber = result.toDouble()
 
         }
-        weighSubstract.setOnClickListener{
+        binding.tvWeighQuantity.setOnClickListener{
            weightValue -= 1
             setWeight()
         }
-        weighPlus.setOnClickListener{
+        binding.plusWeigh.setOnClickListener{
             weightValue += 1
             setWeight()
         }
-        ageSubstract.setOnClickListener{
+        binding.substractAge.setOnClickListener{
             ageValue-= 1
             setAge()
         }
-        agePlus.setOnClickListener{
+        binding.plusAge.setOnClickListener{
             ageValue+= 1
             setAge()
         }
-        calculate.setOnClickListener{
+        binding.btCalcutateImc.setOnClickListener{
             val df = DecimalFormat("#.##")
             var imc:Double = weightValue.toDouble()  / ((heightNumber / 100) * (heightNumber / 100))
             val result = df.format(imc).toDouble()
@@ -106,11 +84,11 @@ class IMCCalculatorActivity : AppCompatActivity() {
     }
 
     private fun setAge() {
-        age.text= ageValue.toString()
+        binding.tvAge.text= ageValue.toString()
     }
 
     private fun setWeight() {
-        weigh.text = weightValue.toString()
+        binding.tvWeigh.text = weightValue.toString()
     }
 
 
@@ -119,8 +97,8 @@ class IMCCalculatorActivity : AppCompatActivity() {
         isMaleSelected = !isMaleSelected
     }
     private fun colorToClick() {
-        male.setCardBackgroundColor(selectColor(isMaleSelected))
-        female.setCardBackgroundColor(selectColor(isFemaleSelected))
+        binding.male.setCardBackgroundColor(selectColor(isMaleSelected))
+        binding.female.setCardBackgroundColor(selectColor(isFemaleSelected))
     }
     private fun selectColor(isSelected: Boolean): Int {
         val colorReference = if (isSelected) {

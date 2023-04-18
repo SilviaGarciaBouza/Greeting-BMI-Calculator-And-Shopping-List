@@ -46,6 +46,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_greet"
+            android:backgroundTint="@color/buttonCalculate"
+            android:layout_marginBottom="16dp"/>
+        <Button
+            android:id="@+id/btn_sentences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/positive_sentences"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_shopping"
             android:backgroundTint="@color/buttonCalculate"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
