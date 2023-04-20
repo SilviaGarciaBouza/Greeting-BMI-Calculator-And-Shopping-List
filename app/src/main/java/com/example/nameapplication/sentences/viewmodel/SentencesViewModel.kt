@@ -13,6 +13,4 @@ class SentencesViewModel: ViewModel() {
         sentencesModel.postValue(currentSentence)
     }
 
-
-
 }

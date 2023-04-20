@@ -3,7 +3,7 @@ package com.example.nameapplication.sentences.model
 class SentencesProvider {
     companion object {
         fun randomSentence(): SentencesModel {
-            val randomnumber:Int = (1..8).random()
+            val randomnumber:Int = (0..sentencesList.size-1).random()
             return sentencesList[randomnumber]
         }
             val sentencesList: List<SentencesModel> = listOf<SentencesModel>(

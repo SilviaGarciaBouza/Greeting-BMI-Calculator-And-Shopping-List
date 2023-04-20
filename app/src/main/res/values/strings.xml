@@ -46,6 +46,9 @@
     <string name="new_product">Nuevo producto</string>
     <string name="a_adir_producto">Añadir producto</string>
     <string name="positive_sentences">Frases positivas</string>
+    <string name="developers_sentences">Frases de programadores</string>
+    <string name="anonimous">Anonimous</string>
+    <string name="hi">Hi</string>
 
 
 </resources>

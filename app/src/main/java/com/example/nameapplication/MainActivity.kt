@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.nameapplication.IMCCalculate.IMCCalculatorActivity
 import com.example.nameapplication.databinding.ActivityMainBinding
+import com.example.nameapplication.developer.view.DeveloperActivity
 import com.example.nameapplication.greet.NameActivity
 import com.example.nameapplication.sentences.view.SentencesActivity
 import com.example.nameapplication.shoppingList.ShoppingActivity
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnSentences.setOnClickListener{
             navigateToSentences()
         }
+        binding.btnSentencesDeveloper.setOnClickListener {
+            navigateToDeveloper()
+        }
     }
 
     private fun navigateToSentences() {
@@ -51,6 +55,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToShoppingList() {
         val intent = Intent(this, ShoppingActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigateToDeveloper(){
+        val intent = Intent(this, DeveloperActivity::class.java)
         startActivity(intent)
     }
 
