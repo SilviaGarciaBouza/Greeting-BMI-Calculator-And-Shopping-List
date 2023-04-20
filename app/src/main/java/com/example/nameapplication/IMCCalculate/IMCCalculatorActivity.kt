@@ -84,11 +84,11 @@ class IMCCalculatorActivity : AppCompatActivity() {
     }
 
     private fun setAge() {
-        binding.tvAge.text= ageValue.toString()
+        binding.tvAgeQuantity.text= ageValue.toString()
     }
 
     private fun setWeight() {
-        binding.tvWeigh.text = weightValue.toString()
+        binding.tvWeighQuantity.text = weightValue.toString()
     }
 
 

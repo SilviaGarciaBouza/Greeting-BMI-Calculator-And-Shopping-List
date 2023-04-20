@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".developer.view.DeveloperActivity"
+    tools:context=".developer.ui.view.DeveloperActivity"
     android:background="@color/backgroundApp"
     android:padding="30dp"
     android:id="@+id/cl_developer">
@@ -18,18 +18,27 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:textSize="24sp"
         android:textColor="@color/black"
-        android:text="@string/hi"/>
+        tools:text="@string/hi"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_author_developer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/anonimous"
+        tools:text="@string/anonimous"
         android:textSize="20sp"
         android:textColor="@color/black"
         android:layout_marginBottom="40dp"
         android:layout_marginEnd="40dp"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:id="@+id/pb_developer" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

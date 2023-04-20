@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.nameapplication.IMCCalculate.IMCCalculatorActivity
 import com.example.nameapplication.databinding.ActivityMainBinding
-import com.example.nameapplication.developer.view.DeveloperActivity
+import com.example.nameapplication.developer.ui.view.DeveloperActivity
 import com.example.nameapplication.greet.NameActivity
 import com.example.nameapplication.sentences.view.SentencesActivity
 import com.example.nameapplication.shoppingList.ShoppingActivity
